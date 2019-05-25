@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4866883d68ba34bc1e0f64d3ff270d84",
+    "revision": "d9628650050d9ffe329b5293f0500382",
     "url": "/datawallet/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/datawallet/static/css/2.62c4ab6b.chunk.css"
   },
   {
-    "revision": "e2d21eb5e6ce19de418c",
+    "revision": "0c06c9edb7a996574482",
     "url": "/datawallet/static/css/main.2cce8147.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/datawallet/static/js/2.cca09dbb.chunk.js"
   },
   {
-    "revision": "e2d21eb5e6ce19de418c",
-    "url": "/datawallet/static/js/main.9007baa8.chunk.js"
+    "revision": "0c06c9edb7a996574482",
+    "url": "/datawallet/static/js/main.e278bb74.chunk.js"
   },
   {
     "revision": "54c97c5c79b9d5f009ef",
