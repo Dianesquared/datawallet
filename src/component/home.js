@@ -1,44 +1,90 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import Assignment_Ind from '@material-ui/icons/AssignmentInd';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
+import List from '@material-ui/core/List';
+import {Link} from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import AccountBox from '@material-ui/icons/AccountBox';
+import AccountBalance from '@material-ui/icons/AccountBalance';
 import CreditCard from '@material-ui/icons/CreditCard';
-import CardTravel from '@material-ui/icons/CardTravel';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
     root: {
         flexGrow: 1,
-      },
-      paper: {
-        padding: '${theme.spacing.unit * 3}px',
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-      },
-})
+    },
+    menuButton: {
+        marginRight: theme.spacing.unit * 2,
+    },
+    title: {
+        flexGrow: 1,
+        textDecoration:"none"
+    },
+    alignLeft:{
+        marginLeft:"10px",
+        marginBottom:"10px"
+    }
+});
 
 class Home extends Component {
-    handleClick(page){
-        this.props.history.push("/"+page);
+    state={
+        menu:false
+    }
+
+    handleMenu(e){
+        let menuValue = this.state.menu;
+        this.setState({
+            menu: !menuValue
+        })
     }
     render() {
+
+
         return (
             <div className={this.props.classes.root}>
-                <Grid container spacing={8}>
-                    <Grid item xs={12}>
-                        <Paper className={this.props.classes.paper}>
-                            <BottomNavigation showLabels
-                                className={this.props.classes.root}>
-                                <BottomNavigationAction label="Personal" icon={<Assignment_Ind />} />
-                                <BottomNavigationAction label="Banks" icon={<CreditCard />} onClick={this.handleClick.bind(this, "bank")} />
-                                <BottomNavigationAction label="Government" icon={<CardTravel />} />
-                            </BottomNavigation>
-                        </Paper>
-                    </Grid>
-                </Grid>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton onClick={this.handleMenu.bind(this)} edge="start" className={this.props.classes.menuButton} color="inherit" aria-label="Menu">
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" color="inherit" className={this.props.classes.title} component={Link} to="/">
+                            Data Wallet
+                            </Typography>
+                        <Button color="inherit">Login</Button>
+                    </Toolbar>
+                </AppBar>
+                <SwipeableDrawer 
+                    open={this.state.menu}
+                    onClose={this.handleMenu.bind(this)}
+                    onOpen={this.handleMenu.bind(this)}
+                >
+                    <List >  
+                        <div className={this.props.classes.alignLeft} color="inherit">Directory</div>
+                        <Divider></Divider>
+                    <ListItem button key="Personal" component={Link} to="/personal" >
+                                <ListItemIcon><AccountBox /></ListItemIcon>
+                                <ListItemText primary="Personal" />
+                            </ListItem>
+                    <ListItem button key="Banks" component={Link} to="/bank" >
+                                <ListItemIcon><CreditCard /></ListItemIcon>
+                                <ListItemText primary="Banks" />
+                            </ListItem>
+                    <ListItem button key="Government" component={Link} to="/government" >
+                                <ListItemIcon><AccountBalance /></ListItemIcon>
+                                <ListItemText primary="Government" />
+                            </ListItem>
+                    </List>
+                </SwipeableDrawer>
+                        <div className={this.props.classes.alignLeft} color="inherit"></div>
             </div>
 
         )

@@ -26,29 +26,70 @@ const styles = theme => ({
     }
 })
 
-class AddBank extends Component {
+class EditBank extends Component {
     state = {
         _name: "",
         _type: "0",
         _accountNo: ""
         }
 
+        
+    componentDidMount() {
+        var id = Number(this.props.match.params.id);
+
+        let db = indexedDB.open("MyData");
+        db.onsuccess = (event) => {
+            let tx = event.target.result.transaction(['banks'], "readonly");
+            let store = tx.objectStore('banks');
+            let selectedItem = store.get(id);
+            console.log(selectedItem);
+            selectedItem.onsuccess = (event) => {
+                this.setState({
+                    _name : event.target.result.name,
+                    _accountNo : event.target.result.accountNo,
+                    _type : event.target.result.type
+                })
+            }
+        }
+        db.onerror = (event) => {
+            console.log(event.target.value);
+        }
+    }
+
     handleChangeText(property, e){
         this.setState({
             [property]: e.target.value
         })
     }
-    save(){
-        var toBeInserted = {
-                    name : this.state._name,
-                    accountNo: this.state._accountNo,
-                    type: this.state._type
-                };
-        var result = saveToDb('banks', toBeInserted, 
-        (event) => {             
-            this.props.history.push("/bank");
-        });
+    
+    save() {
+        var id = Number(this.props.match.params.id);
+        let db = indexedDB.open("MyData");
+        db.onsuccess = (event) => {
+            let tx = event.target.result.transaction(['banks'], "readwrite");
+            let store = tx.objectStore('banks');
+
+            store.put({
+                bankId : id,
+                name: this.state._name,
+                accountNo: this.state._accountNo,
+                type: this.state._type
+            });
+
+            tx.oncomplete = (event) => {
+                this.props.history.push("/bank");
+                //e.preventDefault(); // iwas reload
+            }
+
+            tx.onerror = (event) => {
+
+            }
+        }
+        db.onerror = (event) => {
+            console.log(event.target.value);
+        }
     }
+
     render() {
 
         return (
@@ -60,6 +101,7 @@ class AddBank extends Component {
                     label="Bank Name"
                     className={this.props.classes.textField}
                     margin="normal"
+                    value={this.state._name}
                     onChange={this.handleChangeText.bind(this, "_name")}
                 />
                 <TextField
@@ -67,6 +109,7 @@ class AddBank extends Component {
                            label="Account Number"
                            className={this.props.classes.textField}
                            margin="normal"
+                           value={this.state._accountNo}
                            onChange={this.handleChangeText.bind(this, "_accountNo")}
                        />
                        <br></br>
@@ -75,8 +118,9 @@ class AddBank extends Component {
                 <RadioGroup
           aria-label="Account Type"
           name="type"
-          className={this.props.classes.group}
-                    onChange={this.handleChangeText.bind(this, "_type")}
+          className={this.props.classes.group}          
+          value={this.state._type}
+          onChange={this.handleChangeText.bind(this, "_type")}
         >
           <FormControlLabel value="0" control={<Radio />} label="Savings" />
           <FormControlLabel value="1" control={<Radio />} label="Current" />
@@ -92,8 +136,8 @@ class AddBank extends Component {
     }
 }
 
-AddBank.props = {
+EditBank.props = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(AddBank);
+export default withStyles(styles)(EditBank);

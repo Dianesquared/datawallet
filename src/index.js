@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import 'typeface-roboto'
+import 'typeface-roboto';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { initialize } from './database';
+
+
+initialize();
 
 ReactDOM.render(    <BrowserRouter>
     <App/>
