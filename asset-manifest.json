@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/datawallet/static/css/main.2cce8147.chunk.css",
-    "main.js": "/datawallet/static/js/main.c12a38aa.chunk.js",
-    "main.js.map": "/datawallet/static/js/main.c12a38aa.chunk.js.map",
+    "main.js": "/datawallet/static/js/main.cdb3997d.chunk.js",
+    "main.js.map": "/datawallet/static/js/main.cdb3997d.chunk.js.map",
     "runtime~main.js": "/datawallet/static/js/runtime~main.08db8cb6.js",
     "runtime~main.js.map": "/datawallet/static/js/runtime~main.08db8cb6.js.map",
     "static/css/2.62c4ab6b.chunk.css": "/datawallet/static/css/2.62c4ab6b.chunk.css",
     "static/js/2.cca09dbb.chunk.js": "/datawallet/static/js/2.cca09dbb.chunk.js",
     "static/js/2.cca09dbb.chunk.js.map": "/datawallet/static/js/2.cca09dbb.chunk.js.map",
     "index.html": "/datawallet/index.html",
-    "precache-manifest.64c0984102d9c41cc240149a0b3f45f8.js": "/datawallet/precache-manifest.64c0984102d9c41cc240149a0b3f45f8.js",
+    "precache-manifest.0459a5af18d97f53d4b84d22ae5a83f5.js": "/datawallet/precache-manifest.0459a5af18d97f53d4b84d22ae5a83f5.js",
     "service-worker.js": "/datawallet/service-worker.js",
     "static/css/2.62c4ab6b.chunk.css.map": "/datawallet/static/css/2.62c4ab6b.chunk.css.map",
     "static/css/main.2cce8147.chunk.css.map": "/datawallet/static/css/main.2cce8147.chunk.css.map",
