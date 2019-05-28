@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c03fb9399c1ef19500892e9bfa6c606a",
+    "revision": "2395bcd83bac99b1c07e6c3f9bf6f053",
     "url": "/datawallet/index.html"
   },
   {
-    "revision": "ec73c20883969ea745b0",
+    "revision": "959ac0faabf18983f345",
     "url": "/datawallet/static/css/2.62c4ab6b.chunk.css"
   },
   {
-    "revision": "4185117a3ad9ea620c51",
+    "revision": "02909b356d4313e39047",
     "url": "/datawallet/static/css/main.2cce8147.chunk.css"
   },
   {
-    "revision": "ec73c20883969ea745b0",
-    "url": "/datawallet/static/js/2.28134fe8.chunk.js"
+    "revision": "959ac0faabf18983f345",
+    "url": "/datawallet/static/js/2.a69611a8.chunk.js"
   },
   {
-    "revision": "4185117a3ad9ea620c51",
-    "url": "/datawallet/static/js/main.2c1c1fe1.chunk.js"
+    "revision": "02909b356d4313e39047",
+    "url": "/datawallet/static/js/main.e491745b.chunk.js"
   },
   {
     "revision": "54c97c5c79b9d5f009ef",
