@@ -1,31 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7aa0455ad56094521c5b2628b76f6ade",
+    "revision": "c03fb9399c1ef19500892e9bfa6c606a",
     "url": "/datawallet/index.html"
   },
   {
-    "revision": "bae064adbda75bf53b86",
+    "revision": "ec73c20883969ea745b0",
     "url": "/datawallet/static/css/2.62c4ab6b.chunk.css"
   },
   {
-    "revision": "519c08bf491dfb4a6dd2",
+    "revision": "4185117a3ad9ea620c51",
     "url": "/datawallet/static/css/main.2cce8147.chunk.css"
   },
   {
-    "revision": "bae064adbda75bf53b86",
-    "url": "/datawallet/static/js/2.5491348c.chunk.js"
+    "revision": "ec73c20883969ea745b0",
+    "url": "/datawallet/static/js/2.28134fe8.chunk.js"
   },
   {
-    "revision": "519c08bf491dfb4a6dd2",
-    "url": "/datawallet/static/js/main.c67657c4.chunk.js"
+    "revision": "4185117a3ad9ea620c51",
+    "url": "/datawallet/static/js/main.2c1c1fe1.chunk.js"
   },
   {
     "revision": "54c97c5c79b9d5f009ef",
     "url": "/datawallet/static/js/runtime~main.08db8cb6.js"
-  },
-  {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/datawallet/static/media/logo.5d5d9eef.svg"
   },
   {
     "revision": "987b84570ea69ee660455b8d5e91f5f1",
